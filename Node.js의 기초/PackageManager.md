@@ -36,3 +36,37 @@
 - **npm**으로 패키지를 **설치, 수정, 삭제**할 때마다 패키지들의 **의존 관계**를 `package-lock.json`파일에 저장
 - 저장된 패키지들은 **정확히 일치하는 버전**만 기록, 프로젝트에서 의존하는 패키지 버전을 정확하게 관리할 때 사용
 
+---
+
+## 배포를 위한 npm 시작하기
+
+![](https://velog.velcdn.com/images/rkdwnstjr16/post/8b135924-fc6e-4137-a475-06a9fa70810e/image.png)
+
+- 명령어를 통해 `package.json` 파일을 만들 때 사용된다. `package.json` 은 npm 으로 설치된 모듈에 대한 정보를 저장.
+- 새로운 프로젝트나 패키지를 만들 때 사용.
+- 패키지명, 프로젝트 버전, Github URL등 프로젝트와 관련된 다양한 정보를 설정가능.
+
+### node_modules
+![](https://velog.velcdn.com/images/rkdwnstjr16/post/f6a94764-1e65-42ae-9847-dbfaac19dc8d/image.png)
+
+- `package.json` 파일 내용 기반으로 `npm install` 명령어를 통해 설치된 모듈 파일들이 모여있는 장소.
+- `package.json`에 설정된 모듈과 해당 모듈들이 참고하고 있는 또 다른 모듈도 함께 설치.
+- 사용중인 환경에 맞는 파일들이 설치되기 때문에 이 폴더는 다른곳에 공유하거나 배포할 때 포함하면 안된다.
+
+
+### dependencies
+
+- 코드 실행 시 반드시 필요한 패키지의 이름과 버전을 표시한다.
+    - 즉, `tsc/webpack/parcel` 등의 transpiler/bundler를 통해 빌드되어 순수한 자바스크립트 코드를 실행할 때 필요한 패키지는 모두 `dependencies`에 속해야 한다.
+- `npm install` 시 표기된 패키지가 node_modules 디렉터리에 없으면 표시된 버전의 패키지를 설치한다.
+
+### devDependencies
+
+- 코드 실행 시가 아닌 개발 또는 빌드 환경에서 필요한 패키지의 이름과 버전을 표시한다.
+    - typescript/webpack/eslint/prettier 등의 개발 및 빌드 환경에서만 필요한 패키지가 해당될 수 있다.
+    - 실질적으로 코드를 실행할 때 필요하지 않은 패키지라면 모두 `devDependencies`에 해당될 수 있다.
+- `npm install` 시 표기된 패키지가 node_modules 디렉터리에 없으면 표시된 버전의 패키지를 설치한다.
+
+
+
+
