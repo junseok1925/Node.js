@@ -102,7 +102,7 @@ router.get("/about", (req, res) => {
     app.use("/api", [goodsRouter]);
     
     
-- [http://localhost:3000/](http://localhost:3000/) 뒤에 `/api` 로 시작되는 주소는 `routes/goods.js` 에 있는 Router 미들웨어를 통해 처리.
+//- [http://localhost:3000/](http://localhost:3000/) 뒤에 `/api` 로 시작되는 주소는 `routes/goods.js` 에 있는 Router 미들웨어를 통해 처리.
 
 // 미들웨어(Middleware)??
 
